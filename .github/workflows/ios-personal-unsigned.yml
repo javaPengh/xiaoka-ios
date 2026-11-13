@@ -1,0 +1,50 @@
+name: Build iPhone IPA (unsigned)
+
+# Manual only: uploading code never starts a paid or repeated build by itself.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-personal-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      VITE_API_BASE_URL: https://desktop-7nla9nf.taila5d3f3.ts.net
+      VITE_AUTH_MODE: accounts
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.22.1
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build client and synchronize native project
+        run: |
+          npm run build
+          npx cap sync ios
+          npm run ios:prepare
+          node scripts/check-ios-project.mjs
+      - name: Compile unsigned arm64 application
+        run: bash scripts/package-ios.sh
+      - name: Downloadable IPA and build log
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: xiaoka-diary-unsigned-${{ github.run_number }}
+          path: |
+            build/ios/*.ipa
+            build/ios/*.sha256
+            build/ios/xcodebuild-release.log
+            build/ios/build-info.json
+          if-no-files-found: warn
+          retention-days: 7

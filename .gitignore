@@ -1,0 +1,15 @@
+node_modules/
+dist/
+data/
+.env*
+.cache/
+*.ipa
+*.xcarchive
+ios/App/App/public/
+ios/App/build/
+ios/App/Pods/
+*.log
+build/
+*.p12
+*.mobileprovision
+ios/App/App.xcodeproj/xcuserdata/
