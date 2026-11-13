@@ -1,7 +1,7 @@
 {
   "format": "xiaoka-ios-client-source",
   "version": "0.5.0",
-  "createdAt": "2026-11-13T05:37:14.154Z",
+  "createdAt": "2026-11-13T05:47:19.658Z",
   "targetDevice": "iPhone 13",
   "reportedIos": "26.3.1",
   "apiBase": "https://desktop-7nla9nf.taila5d3f3.ts.net",
@@ -227,8 +227,8 @@
     },
     {
       "path": "scripts/package-ios.sh",
-      "bytes": 3092,
-      "sha256": "83c9de027c94b42315a7bf33903b3a57bb522435bd0c04072000c21e3a508867"
+      "bytes": 3290,
+      "sha256": "912e1cd28e6e3717bb75de3b9ae487bd9f5e815dd891bc92c3632c3105dab688"
     },
     {
       "path": "scripts/prepare-ios.mjs",

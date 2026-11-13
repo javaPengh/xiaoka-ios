@@ -14,7 +14,10 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
 fi
 command -v xcodebuild >/dev/null || { printf '%s\n' 'Xcode command-line tools are missing.' >&2; exit 1; }
 mkdir -p "$BUILD_ROOT"
-XCODE_VERSION="$(xcodebuild -version | head -n 1 | awk '{print $2}')"
+# Read all output before parsing: closing xcodebuild's stdout early (head) can
+# raise NSFileHandleOperationException / SIGABRT on macOS.
+XCODE_VERSION_OUTPUT="$(xcodebuild -version)"
+XCODE_VERSION="$(printf '%s\n' "$XCODE_VERSION_OUTPUT" | awk 'NR == 1 {print $2}')"
 if (( ${XCODE_VERSION%%.*} < 26 )); then
   printf '%s\n' 'Capacitor 8 requires Xcode 26 or newer.' >&2
   exit 1
