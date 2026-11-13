@@ -15,6 +15,7 @@ const parseBody=options=>typeof options.body==='string'?JSON.parse(options.body)
 const dataUrl=async blob=>{const bytes=new Uint8Array(await blob.arrayBuffer());let text='';for(let i=0;i<bytes.length;i+=32768)text+=String.fromCharCode(...bytes.subarray(i,i+32768));return `data:${blob.type};base64,${btoa(text)}`;};
 
 export class LocalRepository extends OfflineEngine {
+  photoUploads = new Map();
   profile(date=today()) {const base=this.get('profile','profile');if(!base)return null;const weights=this.values('measurement').filter(r=>r.date<=date&&r.weightKg!==null).sort((a,b)=>b.date.localeCompare(a.date));return weights.length?{...base,weightKg:weights[0].weightKg,weightDate:weights[0].date}:base;}
   target(date){const usable=t=>activeTarget(t)&&!this.state.meta.unverifiedRuleContents?.[t.id+':'+t.contentHash]&&!this.state.meta.ruleImportUnverified?.[t.id]&&!this.state.meta.ruleConfirmations?.[t.id]?.error;const rows=Object.values(this.state.records).map(row=>this.state.meta.ruleConfirmations?.[row.data?.id]?.error?{...row,data:this.state.meta.ruleConfirmations[row.data.id].previous?.data}:row);return latestCurrentPlan(rows,date,usable);}
   measurement(date){return this.get('measurement',date)||{...measurementSchema.parse({}),date};}
@@ -32,9 +33,16 @@ export class LocalRepository extends OfflineEngine {
     this.schedule(20);return {photoId:id};
   }
   async ensurePhoto(id){const photo=this.state.photos[id];if(!photo)throw new Error('本机没有这张照片。');if(photo.confirmed)return;
-    const blob=await this.storage.getBlob(this.partition,id,photo.mime);if(!blob)throw new Error('待上传照片无法读取，已保留记录，请检查手机存储。');
-    await this.remote('sync/photos',{method:'POST',body:JSON.stringify({photoId:id,image:await dataUrl(blob)})});
-    await this.commit(s=>{if(s.photos[id])s.photos[id].confirmed=true;});
+    let task=this.photoUploads.get(id);
+    if(!task){
+      task=(async()=>{
+        const blob=await this.storage.getBlob(this.partition,id,photo.mime);if(!blob)throw new Error('待上传照片无法读取，已保留记录，请检查手机存储。');
+        await this.remote('sync/photos',{method:'POST',body:JSON.stringify({photoId:id,image:await dataUrl(blob)})});
+        await this.commit(s=>{if(s.photos[id])s.photos[id].confirmed=true;});
+      })();
+      this.photoUploads.set(id,task);
+    }
+    try{await task;}finally{if(this.photoUploads.get(id)===task)this.photoUploads.delete(id);}
   }
   async uploadPhotos(){for(const photo of Object.values(this.state.photos).filter(p=>!p.confirmed).slice(0,10)){if(this.state.outbox.length)await this.push();await this.ensurePhoto(photo.id);}}
   async photo(id){let meta=this.state.photos[id];let blob=await this.storage.getBlob(this.partition,id,meta?.mime);if(!blob){blob=await this.remote('photos/'+id,{binary:true});await this.storage.putBlob(this.partition,id,blob);await this.commit(s=>{s.photos[id]={...s.photos[id],id,mime:blob.type,size:blob.size,cached:true,confirmed:true,lastAccess:Date.now()};});}else await this.commit(s=>{if(s.photos[id])s.photos[id].lastAccess=Date.now();});return dataUrl(blob);}

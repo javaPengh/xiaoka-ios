@@ -302,13 +302,13 @@
     },
     {
       "path": "src/api.ts",
-      "bytes": 2221,
-      "sha256": "72124539086fc18af22f2329043c27da7117c7beac6e248568be21555c276b88"
+      "bytes": 2494,
+      "sha256": "8241de773e486049cf511c1bb3b89353c5b6616db692f733ff9b4bed6120e5e3"
     },
     {
       "path": "src/App.tsx",
-      "bytes": 47475,
-      "sha256": "1f50d16011b19f77e2281d63c4ffdc077799394ca24bcff4ec6b0d7b7bd65f5a"
+      "bytes": 47821,
+      "sha256": "2cfb3842150c062b79d921a63aecfd55de5b9ff9a52632cdbee089f1abc0122c"
     },
     {
       "path": "src/Auth.tsx",
@@ -382,8 +382,8 @@
     },
     {
       "path": "src/offline/repository.mjs",
-      "bytes": 32524,
-      "sha256": "d723413c01b7c2cb021e1f2a1edc46971797f1c7e635ee04d24b786c04507dca"
+      "bytes": 32801,
+      "sha256": "2cc9888ea58df533a2dd422c8533a8ac251e8fda15697aca467e675408c4e4f7"
     },
     {
       "path": "src/offline/service.ts",
@@ -429,6 +429,12 @@
       "path": "vite.config.ts",
       "bytes": 270,
       "sha256": "e565827713cc9438ee537810c495d6119e047ed1bd746c96702bc5c06dd67755"
+    },
+    {
+      "path": "test/photo-upload.test.mjs",
+      "bytes": 3939,
+      "sha256": "55861937bb75ad98f85781ec658a8639870445c876ecf1dc94e66ebab046afdc"
     }
-  ]
+  ],
+  "updatedAt": "2026-11-13T09:03:54.694Z"
 }
