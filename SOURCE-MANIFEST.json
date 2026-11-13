@@ -1,14 +1,14 @@
 {
   "format": "xiaoka-ios-client-source",
   "version": "0.5.0",
-  "createdAt": "2026-11-13T05:14:11.836Z",
+  "createdAt": "2026-11-13T05:37:14.154Z",
   "targetDevice": "iPhone 13",
   "reportedIos": "26.3.1",
   "apiBase": "https://desktop-7nla9nf.taila5d3f3.ts.net",
   "authMode": "accounts",
   "signed": false,
   "xcodeCompiled": false,
-  "uploadApproved": false,
+  "exportedClientBuildVerified": true,
   "files": [
     {
       "path": ".github/workflows/ios-personal-unsigned.yml",
@@ -212,8 +212,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2916,
-      "sha256": "8d4c165c8043873854dc7ffb4335aa55d3ded0e8ff8957754d1dec222c106843"
+      "bytes": 3059,
+      "sha256": "fa42a6dc19fc77f2c61e6dd5a76c6cf9c150ef5656a6c1d9bef072050611453d"
     },
     {
       "path": "scripts/build-shell.mjs",
@@ -249,6 +249,11 @@
       "path": "shared/dates.mjs",
       "bytes": 272,
       "sha256": "51bd2d802ef8a8aed7023b6b2339a86c31b9ffcd8074f1f93fc32d213f92a479"
+    },
+    {
+      "path": "shared/foods.seed.json",
+      "bytes": 2961,
+      "sha256": "f1c44c656631fc1c25d86a4b99699d37ba98bb5cdcb4f5996dcea4a9697edffd"
     },
     {
       "path": "shared/nutrition-data.mjs",
@@ -383,7 +388,7 @@
     {
       "path": "src/offline/service.ts",
       "bytes": 2795,
-      "sha256": "5daa105da5adf62f84efbcd2a801312d06a7c6a24340191fd67cefff62a43377"
+      "sha256": "8abebf9949d7bdeb23e03342251aeb6fd265f3a9ef40ec822f1b0e10b6cc564a"
     },
     {
       "path": "src/offline/storage.ts",

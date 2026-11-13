@@ -1,7 +1,7 @@
 import { LocalRepository } from './repository.mjs';
 import { localStorageAdapter, requestPersistence } from './storage';
 import { request } from '../api';
-import seed from '../../server/foods.seed.json';
+import seed from '../../shared/foods.seed.json';
 import type { Connection } from '../types';
 export type Repository=InstanceType<typeof LocalRepository>;
 const instances=new Map<string,Repository>();

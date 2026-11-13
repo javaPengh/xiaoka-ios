@@ -4,8 +4,8 @@
 
 ## 云端编译
 
-1. 将此目录的**内容**放到自己的GitHub私有仓库根目录，包括`.github`目录。ZIP不能原样作为一个文件上传；也不要上传完整开发项目或服务器目录。
-2. 在GitHub账单设置确认Actions剩余额度与支出限制。私有仓库的Mac构建会消耗账户额度；上传代码不会自动执行本流程。
+1. 将此目录的**内容**放到用户已确认的GitHub仓库 https://github.com/javaPengh/xiaoka-ios 根目录，包括`.github`目录。用户选择保留公开；此包仅含手机端源码及已确认的服务器地址。ZIP不能原样作为一个文件上传；也不要上传完整开发项目或服务器目录。
+2. 当前公开仓库使用标准GitHub Mac构建机，适用GitHub公开仓库免费规则；上传代码不会自动执行本流程，不启用付费大型构建机。
 3. 仓库页面选择Actions → Build iPhone IPA (unsigned) → Run workflow。流程只读取源码，使用标准macOS构建机，不使用Apple账号或签名证书。
 4. 构建完成后，从该次运行的Artifacts下载`xiaoka-diary-unsigned-编号`，解压取得`xiaoka-diary-unsigned.ipa`。失败时查看同一产物中的`xcodebuild-release.log`。
 

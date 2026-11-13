@@ -1,0 +1,122 @@
+[
+  {
+    "id": "usda-173424",
+    "name": "鸡蛋（煮熟）",
+    "emoji": "🥚",
+    "servingGrams": 50,
+    "nutrientsPer100g": {
+      "energyKcal": 155,
+      "proteinG": 12.58,
+      "carbsG": 1.12,
+      "fatG": 10.61,
+      "fiberG": 0,
+      "sugarG": 1.12,
+      "sodiumMg": 124,
+      "calciumMg": 50,
+      "ironMg": 1.19,
+      "potassiumMg": 126,
+      "vitaminCMg": 0
+    },
+    "source": "USDA FoodData Central 173424，SR Legacy；每100克可食部分参考值"
+  },
+  {
+    "id": "usda-168878",
+    "name": "长粒白米饭（熟，强化）",
+    "emoji": "🍚",
+    "servingGrams": 150,
+    "nutrientsPer100g": {
+      "energyKcal": 130,
+      "proteinG": 2.69,
+      "carbsG": 28.17,
+      "fatG": 0.28,
+      "fiberG": 0.4,
+      "sugarG": 0.05,
+      "sodiumMg": 1,
+      "calciumMg": 10,
+      "ironMg": 1.2,
+      "potassiumMg": 35,
+      "vitaminCMg": 0
+    },
+    "source": "USDA FoodData Central 168878，SR Legacy；每100克可食部分参考值"
+  },
+  {
+    "id": "usda-171477",
+    "name": "鸡胸肉（烤熟，去皮）",
+    "emoji": "🍗",
+    "servingGrams": 100,
+    "nutrientsPer100g": {
+      "energyKcal": 165,
+      "proteinG": 31.02,
+      "carbsG": 0,
+      "fatG": 3.57,
+      "fiberG": 0,
+      "sugarG": 0,
+      "sodiumMg": 74,
+      "calciumMg": 15,
+      "ironMg": 1.04,
+      "potassiumMg": 256,
+      "vitaminCMg": 0
+    },
+    "source": "USDA FoodData Central 171477，SR Legacy；每100克可食部分参考值"
+  },
+  {
+    "id": "usda-171265",
+    "name": "全脂牛奶（含维生素D）",
+    "emoji": "🥛",
+    "servingGrams": 250,
+    "nutrientsPer100g": {
+      "energyKcal": 61,
+      "proteinG": 3.15,
+      "carbsG": 4.8,
+      "fatG": 3.25,
+      "fiberG": 0,
+      "sugarG": 5.05,
+      "sodiumMg": 43,
+      "calciumMg": 113,
+      "ironMg": 0.03,
+      "potassiumMg": 132,
+      "vitaminCMg": 0
+    },
+    "source": "USDA FoodData Central 171265，SR Legacy；每100克可食部分参考值"
+  },
+  {
+    "id": "usda-171688",
+    "name": "苹果（带皮）",
+    "emoji": "🍎",
+    "servingGrams": 150,
+    "nutrientsPer100g": {
+      "energyKcal": 52,
+      "proteinG": 0.26,
+      "carbsG": 13.81,
+      "fatG": 0.17,
+      "fiberG": 2.4,
+      "sugarG": 10.39,
+      "sodiumMg": 1,
+      "calciumMg": 6,
+      "ironMg": 0.12,
+      "potassiumMg": 107,
+      "vitaminCMg": 4.6
+    },
+    "source": "USDA FoodData Central 171688，SR Legacy；每100克可食部分参考值"
+  },
+  {
+    "id": "usda-169967",
+    "name": "西兰花（水煮，无盐）",
+    "emoji": "🥦",
+    "servingGrams": 100,
+    "nutrientsPer100g": {
+      "energyKcal": 35,
+      "proteinG": 2.38,
+      "carbsG": 7.18,
+      "fatG": 0.41,
+      "fiberG": 3.3,
+      "sugarG": 1.39,
+      "sodiumMg": 41,
+      "calciumMg": 40,
+      "ironMg": 0.67,
+      "potassiumMg": 293,
+      "vitaminCMg": 64.9
+    },
+    "source": "USDA FoodData Central 169967，SR Legacy；每100克可食部分参考值"
+  }
+]
