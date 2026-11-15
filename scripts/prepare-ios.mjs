@@ -7,6 +7,7 @@ const plistPath = path.join(app, 'Info.plist');
 if (!fs.existsSync(plistPath)) throw new Error('请先运行 npm run ios:add 创建 iOS 工程。');
 let plist = fs.readFileSync(plistPath, 'utf8');
 const permissions = {
+  NSMotionUsageDescription: '读取 iPhone 当天步数，自动保存到你的日记。',
   NSCameraUsageDescription: '拍摄你要记录的餐食照片，由你选择后分析并保存。',
   NSPhotoLibraryUsageDescription: '选择餐食照片，用于分析食物和记录饮食。',
   NSPhotoLibraryAddUsageDescription: '在你主动保存照片时写入相册。',
@@ -57,3 +58,14 @@ const scenePath=path.join(app,'SceneDelegate.swift');
 let scene=fs.readFileSync(scenePath,'utf8').replace('window?.rootViewController = CAPBridgeViewController()','window?.rootViewController = LocalBridgeViewController()');
 if(!scene.includes('window?.rootViewController = LocalBridgeViewController()'))throw new Error('iOS scene entry must use the local-storage bridge.');
 fs.writeFileSync(scenePath,scene);
+
+let motionProject=fs.readFileSync(projectPath,'utf8');
+if(!motionProject.includes('PedometerPlugin.swift')){
+ const fileId='F4A5B6C7D8E901234567890C',buildId='F4A5B6C7D8E901234567890D';
+ motionProject=motionProject.replace('/* Begin PBXBuildFile section */',`/* Begin PBXBuildFile section */\n\t\t${buildId} /* PedometerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ${fileId} /* PedometerPlugin.swift */; };`);
+ motionProject=motionProject.replace('/* Begin PBXFileReference section */',`/* Begin PBXFileReference section */\n\t\t${fileId} /* PedometerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerPlugin.swift; sourceTree = "<group>"; };`);
+ motionProject=motionProject.replace('504EC3071FED79650016851F /* AppDelegate.swift */,',`504EC3071FED79650016851F /* AppDelegate.swift */,\n\t\t\t\t${fileId} /* PedometerPlugin.swift */,`);
+ motionProject=motionProject.replace('504EC3081FED79650016851F /* AppDelegate.swift in Sources */,',`504EC3081FED79650016851F /* AppDelegate.swift in Sources */,\n\t\t\t\t${buildId} /* PedometerPlugin.swift in Sources */,`);
+ if(!motionProject.includes(`${buildId} /* PedometerPlugin.swift in Sources */,`))throw Error('Pedometer plugin missing from build sources');
+ fs.writeFileSync(projectPath,motionProject);
+}

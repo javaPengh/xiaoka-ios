@@ -1,3 +1,4 @@
+import {saveManualMeasurement} from './steps.mjs';
 import { validateRecord } from '../../shared/records.mjs';
 import {dateInTimezone,prepareBodyProfile,latestBodyProfile,bodyPlanMissing} from '../../shared/body-profile.mjs';
 import {latestCurrentPlan} from '../../shared/current-plan.mjs';
@@ -156,7 +157,7 @@ export class LocalRepository extends OfflineEngine {
     }
     if(path.startsWith('entries/')){const id=path.split('/')[1];const previous=this.get('entry',id);if(!previous)throw new Error('记录不存在');if(method==='DELETE'){await this.mutate((s,edit)=>edit('entry',id,null,true));return {ok:true};}const value={...previous,...itemSchema.parse(body),date:dateSchema.parse(body.date),meal:mealSchema.parse(body.meal),updatedAt:now()};await this.mutate((s,edit)=>edit('entry',id,value));return value;}
     if(path==='day'){const date=dateSchema.parse(params.get('date'));return {measurement:this.measurement(date),history:this.values('measurement').filter(row=>row.date<=date).sort((a,b)=>a.date.localeCompare(b.date)),target:this.target(date)};}
-    if(path==='measurements'){const date=dateSchema.parse(body.date);const row={...measurementSchema.parse({...this.measurement(date),...body}),date,updatedAt:now()};await this.mutate((s,edit)=>edit('measurement',date,row));return row;}
+    if(path==='measurements')return saveManualMeasurement(this,body);
     if(path==='calendar'){const month=params.get('month');const values=new Map();for(const type of ['entry','measurement','plan','dayTarget','nutritionAssessment'])for(const row of this.values(type)){const date=row.date||row.startDate||row.contextDate;if(date?.startsWith(month))values.set(date,{...values.get(date),date,entries:(values.get(date)?.entries||0)+(type==='entry'?1:0),body:type==='measurement'||values.get(date)?.body,bodyProfile:type==='nutritionAssessment'||values.get(date)?.bodyProfile,target:['plan','dayTarget'].includes(type)||values.get(date)?.target});}return [...values.values()];}
     if(path==='ai/targets'){await this.push();const localProfile=JSON.stringify(this.profile(body.date));const result=await this.remote(path,options);await this.commit(s=>{s.proposals[result.id]={...result,localProfile};});return result;}
     if(path==='targets'||path==='targets/accept'){

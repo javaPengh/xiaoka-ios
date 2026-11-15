@@ -111,5 +111,8 @@ public class OfflineStoragePlugin: CAPPlugin, CAPBridgedPlugin {
 }
 
 class LocalBridgeViewController: CAPBridgeViewController {
-    override func capacitorDidLoad() { bridge?.registerPluginInstance(OfflineStoragePlugin()) }
+    override func capacitorDidLoad() {
+        bridge?.registerPluginInstance(OfflineStoragePlugin())
+        bridge?.registerPluginInstance(PedometerPlugin())
+    }
 }

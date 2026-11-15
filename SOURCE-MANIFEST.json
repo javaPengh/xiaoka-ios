@@ -21,6 +21,11 @@
       "sha256": "4d2bbbdc1505fbda811d15958083d82b96a3828bcb34e87ba0bdae05e7b8258c"
     },
     {
+      "path": "README.md",
+      "bytes": 3059,
+      "sha256": "fa42a6dc19fc77f2c61e6dd5a76c6cf9c150ef5656a6c1d9bef072050611453d"
+    },
+    {
       "path": "capacitor.config.ts",
       "bytes": 283,
       "sha256": "bccb06e0d5be8a15ab16293a05db81f1b3a2370669f2fcece51bf0f638729be8"
@@ -34,6 +39,21 @@
       "path": "ios/.gitignore",
       "bytes": 206,
       "sha256": "2b7132a9943d2622e51e656897ca5162f56b121b40b423dedce1fbc699dba88a"
+    },
+    {
+      "path": "ios/App/App.xcodeproj/project.pbxproj",
+      "bytes": 16347,
+      "sha256": "1a1e864e6f68fb6f33ceea64acd04e58258389d34111a60e63e4669f45ed7175"
+    },
+    {
+      "path": "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "bytes": 238,
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
+    },
+    {
+      "path": "ios/App/App.xcodeproj/xcshareddata/xcschemes/App.xcscheme",
+      "bytes": 1384,
+      "sha256": "211654c5ea0caa04d53adb77cfd69007e09199b085a842a894cae0c37f883c3c"
     },
     {
       "path": "ios/App/App/AppDelegate.swift",
@@ -86,24 +106,19 @@
       "sha256": "525ae6bae67a30143ef9ccb25bdef0764d1115c5e5ef4b668c8be48835e4d9be"
     },
     {
-      "path": "ios/App/App/capacitor.config.json",
-      "bytes": 240,
-      "sha256": "906b07d9a348d4ec64377e95924d2fe7a41a7ab9417884f145cfcaa6fceb47d9"
-    },
-    {
-      "path": "ios/App/App/config.xml",
-      "bytes": 185,
-      "sha256": "e9dcda493e663c5c4db9e3cb3bd968477a6e90aa8840bcbba40d72ed54b767ce"
-    },
-    {
       "path": "ios/App/App/Info.plist",
-      "bytes": 2747,
-      "sha256": "3aab6ce97891ca1d235455e002fc49662e2e942f74b243c9daf730937b7edc2d"
+      "bytes": 2862,
+      "sha256": "ef1178390fadf759382597f9997848bb3428d27b71b58026ffe2df35dc6229cb"
     },
     {
       "path": "ios/App/App/OfflineStoragePlugin.swift",
-      "bytes": 8794,
-      "sha256": "787f94345b9dad00aff5bd7bdea8e9f441487bb1c57d506f29dd2fe913d8063c"
+      "bytes": 8867,
+      "sha256": "3c46b7395298f4983569ab221d1e718cc437b03add10661c7e0ac6361cbfd7d5"
+    },
+    {
+      "path": "ios/App/App/PedometerPlugin.swift",
+      "bytes": 2368,
+      "sha256": "efd8d0219fcbdf66326e7df677b7d15e85bad0e970089e6de540e32bb1eecdd3"
     },
     {
       "path": "ios/App/App/PrivacyInfo.xcprivacy",
@@ -116,19 +131,14 @@
       "sha256": "2fd4d66c65e0953d92b85ef17fcf3871388b783f39f21cbf17890a6f57e9f4ab"
     },
     {
-      "path": "ios/App/App.xcodeproj/project.pbxproj",
-      "bytes": 15887,
-      "sha256": "21f3f471b02acdb06f200b0fe38458e22e850078b64d7ca1b3aaa7432a4a4a06"
+      "path": "ios/App/App/capacitor.config.json",
+      "bytes": 240,
+      "sha256": "906b07d9a348d4ec64377e95924d2fe7a41a7ab9417884f145cfcaa6fceb47d9"
     },
     {
-      "path": "ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
-      "bytes": 238,
-      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
-    },
-    {
-      "path": "ios/App/App.xcodeproj/xcshareddata/xcschemes/App.xcscheme",
-      "bytes": 1384,
-      "sha256": "211654c5ea0caa04d53adb77cfd69007e09199b085a842a894cae0c37f883c3c"
+      "path": "ios/App/App/config.xml",
+      "bytes": 185,
+      "sha256": "e9dcda493e663c5c4db9e3cb3bd968477a6e90aa8840bcbba40d72ed54b767ce"
     },
     {
       "path": "ios/App/CapApp-SPM/.gitignore",
@@ -211,19 +221,14 @@
       "sha256": "dcd412b8f57cfc8d90e1ea19137875df5ec8f1f1469e15a287e2e31741e63f2a"
     },
     {
-      "path": "README.md",
-      "bytes": 3059,
-      "sha256": "fa42a6dc19fc77f2c61e6dd5a76c6cf9c150ef5656a6c1d9bef072050611453d"
-    },
-    {
       "path": "scripts/build-shell.mjs",
       "bytes": 1116,
       "sha256": "228fccf02328f0e580baeaba52ea8d2239cf5807ff37e98783347c3d2e3a9994"
     },
     {
       "path": "scripts/check-ios-project.mjs",
-      "bytes": 2709,
-      "sha256": "02d6075a1c330b1d56455ff3499cf2ccbf982a8aec5c4c36dacb096337abb77a"
+      "bytes": 3103,
+      "sha256": "deaa8ce0c03266ac10620b5363286fec42aec20e2b1811b9cfd9825f27b17186"
     },
     {
       "path": "scripts/package-ios.sh",
@@ -232,8 +237,8 @@
     },
     {
       "path": "scripts/prepare-ios.mjs",
-      "bytes": 5625,
-      "sha256": "b1e67ad13759d79c821d49121b80867c9b5bce0c67a3759156e308473324c787"
+      "bytes": 7042,
+      "sha256": "ac8ab5afac9fd08a39e40f8ec4ade89d401e21ebf2fe9c10d6852150eb3b1ef7"
     },
     {
       "path": "shared/body-profile.mjs",
@@ -301,14 +306,9 @@
       "sha256": "8c1f5d75568fa2e8a6120d924e2c8ec73c2e19492aee684cb89fbe0edaef70da"
     },
     {
-      "path": "src/api.ts",
-      "bytes": 2494,
-      "sha256": "8241de773e486049cf511c1bb3b89353c5b6616db692f733ff9b4bed6120e5e3"
-    },
-    {
       "path": "src/App.tsx",
-      "bytes": 47821,
-      "sha256": "2cfb3842150c062b79d921a63aecfd55de5b9ff9a52632cdbee089f1abc0122c"
+      "bytes": 48037,
+      "sha256": "8394e7f574eb0e588fdc456d6141958493efe0f3ea9ecf31775251ede7bfb668"
     },
     {
       "path": "src/Auth.tsx",
@@ -326,14 +326,39 @@
       "sha256": "251164431849acd4259a80d53e17ddc641499195f30821f2db5ce96389c3bab9"
     },
     {
+      "path": "src/Health.tsx",
+      "bytes": 10539,
+      "sha256": "5cc8f8c5471fb628facc133f4887391126a56f154b88f88231f8c6c1422263b1"
+    },
+    {
+      "path": "src/NutritionQuestions.tsx",
+      "bytes": 5435,
+      "sha256": "fac204b99e3f19c1578ac2bd73612ca5778a4ea9faf9922d80029b18483512e6"
+    },
+    {
+      "path": "src/NutritionViews.tsx",
+      "bytes": 5364,
+      "sha256": "ec1adb4a47920f42e0c7e850970f8b1fd26f274dbfc248b835a48d6f9faa9930"
+    },
+    {
+      "path": "src/SimpleTargetSheet.tsx",
+      "bytes": 3719,
+      "sha256": "3b81b061246091345a0960d2b097d7c0913fcdb8d37fd0d0e0a46528b646c4c2"
+    },
+    {
+      "path": "src/StepTracker.tsx",
+      "bytes": 3422,
+      "sha256": "8e8b2a12d2f936fb6453d510988bd0c3998e15c1adca6338ae00c9a510c7e95e"
+    },
+    {
+      "path": "src/api.ts",
+      "bytes": 2494,
+      "sha256": "8241de773e486049cf511c1bb3b89353c5b6616db692f733ff9b4bed6120e5e3"
+    },
+    {
       "path": "src/health.css",
       "bytes": 11798,
       "sha256": "80cc54cf8a986f425faf43d899ae6740a77a796d37e2d891b0a737f25381950f"
-    },
-    {
-      "path": "src/Health.tsx",
-      "bytes": 10468,
-      "sha256": "934f4c2bc5dff1fa80ff67678e2965dc06687ce00ef526011991132767d5f28c"
     },
     {
       "path": "src/main.tsx",
@@ -351,14 +376,9 @@
       "sha256": "3f22ec3be4f60a8a212ae4960a1726da82d930fcac9e8ce7e5af46f2ae0d10fa"
     },
     {
-      "path": "src/NutritionQuestions.tsx",
-      "bytes": 5435,
-      "sha256": "fac204b99e3f19c1578ac2bd73612ca5778a4ea9faf9922d80029b18483512e6"
-    },
-    {
-      "path": "src/NutritionViews.tsx",
-      "bytes": 5364,
-      "sha256": "ec1adb4a47920f42e0c7e850970f8b1fd26f274dbfc248b835a48d6f9faa9930"
+      "path": "src/offline/StoragePanel.tsx",
+      "bytes": 5287,
+      "sha256": "46b28c58fe06658179029b7b64ef36265056ebb8520fddb7e64b8edefaa1eca4"
     },
     {
       "path": "src/offline/engine.mjs",
@@ -382,8 +402,8 @@
     },
     {
       "path": "src/offline/repository.mjs",
-      "bytes": 32801,
-      "sha256": "2cc9888ea58df533a2dd422c8533a8ac251e8fda15697aca467e675408c4e4f7"
+      "bytes": 32686,
+      "sha256": "862b8c23c1f04e31a0eb6de3e5c3d29b8cb8200b6fc52cb8c03d78e56b352e16"
     },
     {
       "path": "src/offline/service.ts",
@@ -391,19 +411,14 @@
       "sha256": "8abebf9949d7bdeb23e03342251aeb6fd265f3a9ef40ec822f1b0e10b6cc564a"
     },
     {
+      "path": "src/offline/steps.mjs",
+      "bytes": 1327,
+      "sha256": "b87103ca56e011e8ef7e1aba27f11bc461e3db5da4ae4be8a637e665b4860b1b"
+    },
+    {
       "path": "src/offline/storage.ts",
       "bytes": 6773,
       "sha256": "d35ba54ebb4c9c694bbd4e1110045805dc90ea1283ae96f95f49b410a758ff08"
-    },
-    {
-      "path": "src/offline/StoragePanel.tsx",
-      "bytes": 5287,
-      "sha256": "46b28c58fe06658179029b7b64ef36265056ebb8520fddb7e64b8edefaa1eca4"
-    },
-    {
-      "path": "src/SimpleTargetSheet.tsx",
-      "bytes": 3719,
-      "sha256": "3b81b061246091345a0960d2b097d7c0913fcdb8d37fd0d0e0a46528b646c4c2"
     },
     {
       "path": "src/styles.css",
@@ -421,6 +436,16 @@
       "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
     },
     {
+      "path": "test/photo-upload.test.mjs",
+      "bytes": 3939,
+      "sha256": "55861937bb75ad98f85781ec658a8639870445c876ecf1dc94e66ebab046afdc"
+    },
+    {
+      "path": "test/steps.test.mjs",
+      "bytes": 3082,
+      "sha256": "b25e6ed1e945595e031b0dc0f69d0fb906ce957b61887135d2610c62980f97ad"
+    },
+    {
       "path": "tsconfig.json",
       "bytes": 420,
       "sha256": "a2f5a71d7e0b0e5e355e51af4550567d81a209c8e2514c0f6c09309514cbc960"
@@ -429,12 +454,8 @@
       "path": "vite.config.ts",
       "bytes": 270,
       "sha256": "e565827713cc9438ee537810c495d6119e047ed1bd746c96702bc5c06dd67755"
-    },
-    {
-      "path": "test/photo-upload.test.mjs",
-      "bytes": 3939,
-      "sha256": "55861937bb75ad98f85781ec658a8639870445c876ecf1dc94e66ebab046afdc"
     }
   ],
-  "updatedAt": "2026-11-13T09:03:54.694Z"
+  "updatedAt": "2026-11-15T03:19:53.066Z",
+  "deviceTested": false
 }

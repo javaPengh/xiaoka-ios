@@ -74,5 +74,7 @@
 	<string>在你主动保存照片时写入相册。</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>连接你的电脑上的日记服务，读取和保存饮食记录。</string>
+	<key>NSMotionUsageDescription</key>
+	<string>读取 iPhone 当天步数，自动保存到你的日记。</string>
 </dict>
 </plist>

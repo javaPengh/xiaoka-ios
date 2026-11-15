@@ -17,7 +17,7 @@ assert.match(project,/OfflineStoragePlugin\.swift in Sources/);
 assert.match(project,/SceneDelegate\.swift in Sources/);
 assert.match(read('ios/App/App/Base.lproj/Main.storyboard'),/customClass="LocalBridgeViewController"/);
 for(const file of ['AppDelegate.swift','SceneDelegate.swift','OfflineStoragePlugin.swift','Info.plist','PrivacyInfo.xcprivacy','config.xml','capacitor.config.json'])assert.ok(fs.existsSync(path.join(root,'ios/App/App',file)),file+' missing');
-for(const permission of ['NSCameraUsageDescription','NSPhotoLibraryUsageDescription','NSPhotoLibraryAddUsageDescription'])assert.ok(plist.includes('<key>'+permission+'</key>'),permission+' missing');
+for(const permission of ['NSCameraUsageDescription','NSPhotoLibraryUsageDescription','NSPhotoLibraryAddUsageDescription','NSMotionUsageDescription'])assert.ok(plist.includes('<key>'+permission+'</key>'),permission+' missing');
 assert.ok(!plist.includes('NSAllowsArbitraryLoads'),'Trusted HTTPS must remain enabled');
 assert.ok(project.includes('MARKETING_VERSION = '+APP_VERSION+';'),'Native and client versions differ');
 const native=JSON.parse(read('ios/App/App/capacitor.config.json'));
@@ -31,4 +31,10 @@ for(const name of ['camera','filesystem','share']){
 }
 const web=path.join(root,'ios/App/App/public');
 for(const file of ['index.html','sw.js'])assert.ok(fs.existsSync(path.join(web,file)),'Missing native web asset '+file);
-console.log(JSON.stringify({passed:true,kind:'ios_project_structure_only',version:APP_VERSION,nativeEntry:'LocalBridgeViewController',storage:'SQLite_and_Keychain_bridge_registered',compiledWithXcode:false,deviceTested:false}));
+
+assert.match(plugin,/registerPluginInstance\(PedometerPlugin\(\)\)/);
+assert.match(project,/PedometerPlugin\.swift in Sources/);
+assert.match(read('ios/App/App/PedometerPlugin.swift'),/import CoreMotion/);
+assert.match(read('ios/App/App/PedometerPlugin.swift'),/queryPedometerData/);
+
+console.log(JSON.stringify({passed:true,kind:'ios_project_structure_only',version:APP_VERSION,nativeEntry:'LocalBridgeViewController',storage:'SQLite_and_Keychain_bridge_registered',pedometer:'CoreMotion_bridge_registered',compiledWithXcode:false,deviceTested:false}));
