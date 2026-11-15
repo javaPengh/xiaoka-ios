@@ -6,7 +6,8 @@ export async function saveAutomaticSteps(repo,reading){
  if(!Number.isSafeInteger(reading.steps)||reading.steps<0||reading.steps>200000)throw Error('系统返回的步数无效');
  if(repo.measurement(reading.date).steps===reading.steps)return false;
  let changed=false;
- await repo.mutate((s,edit)=>{if(reading.date!==localDay())return;const old=s.records[keyOf('measurement',reading.date)]?.data||{};if(old.steps===reading.steps)return;edit('measurement',reading.date,{...measurementSchema.parse({...old,steps:reading.steps}),date:reading.date,updatedAt:new Date().toISOString()});changed=true;});
+ // Use the existing background sync cycle, not a server request per step.
+ await repo.commit(s=>{if(reading.date!==localDay())return;const old=s.records[keyOf('measurement',reading.date)]?.data||{};if(old.steps===reading.steps)return;repo.edit(s,'measurement',reading.date,{...measurementSchema.parse({...old,steps:reading.steps}),date:reading.date,updatedAt:new Date().toISOString()});changed=true;});
  return changed;
 }
 export async function saveManualMeasurement(repo,body){

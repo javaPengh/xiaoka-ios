@@ -25,3 +25,7 @@ test('拒绝无效步数，读取失败时不会写入假零值',async t=>{
 test('存储失败不改变已有步数，可再次刷新恢复',async t=>{
  const {repo,storage}=await fixture(t),date=localDay();await saveAutomaticSteps(repo,{date,steps:100});storage.fail=true;await assert.rejects(saveAutomaticSteps(repo,{date,steps:200}),/disk full/);assert.equal(repo.measurement(date).steps,100);storage.fail=false;await saveAutomaticSteps(repo,{date,steps:200});assert.equal(repo.measurement(date).steps,200);
 });
+
+test('实时步数落盘并进入队列，不按每个步数触发网络同步',async t=>{
+ const {repo}=await fixture(t);let schedules=0;repo.schedule=()=>{schedules++};for(const steps of [10,11,12])await saveAutomaticSteps(repo,{date:localDay(),steps});assert.equal(schedules,0);assert.equal(repo.measurement(localDay()).steps,12);assert.ok(repo.state.outbox.length>0);
+});

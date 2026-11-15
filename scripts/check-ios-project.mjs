@@ -36,5 +36,8 @@ assert.match(plugin,/registerPluginInstance\(PedometerPlugin\(\)\)/);
 assert.match(project,/PedometerPlugin\.swift in Sources/);
 assert.match(read('ios/App/App/PedometerPlugin.swift'),/import CoreMotion/);
 assert.match(read('ios/App/App/PedometerPlugin.swift'),/queryPedometerData/);
+assert.match(read('ios/App/App/PedometerPlugin.swift'),/startUpdates/);
+assert.match(read('ios/App/App/PedometerPlugin.swift'),/stopUpdates/);
+assert.match(read('ios/App/App/PedometerPlugin.swift'),/UIApplication.openSettingsURLString/);
 
 console.log(JSON.stringify({passed:true,kind:'ios_project_structure_only',version:APP_VERSION,nativeEntry:'LocalBridgeViewController',storage:'SQLite_and_Keychain_bridge_registered',pedometer:'CoreMotion_bridge_registered',compiledWithXcode:false,deviceTested:false}));

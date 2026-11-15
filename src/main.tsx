@@ -1,9 +1,10 @@
+import {MotionProvider} from './Motion';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './styles.css';
 import { hydrateConnection } from './api';
-hydrateConnection().then(()=>createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>)).catch(()=>{document.getElementById('root')!.textContent='本机安全存储暂时无法打开，请检查浏览器存储权限或重新打开应用。原有日记未被删除。';});
+hydrateConnection().then(()=>createRoot(document.getElementById('root')!).render(<React.StrictMode><MotionProvider><App /></MotionProvider></React.StrictMode>)).catch(()=>{document.getElementById('root')!.textContent='本机安全存储暂时无法打开，请检查浏览器存储权限或重新打开应用。原有日记未被删除。';});
 function shellState(message:string){localStorage.setItem('xiaoka.shell.status',message);window.dispatchEvent(new Event('xiaoka-shell'));}
 if(import.meta.env.PROD){
   if('serviceWorker' in navigator&&(location.protocol==='https:'||['localhost','127.0.0.1'].includes(location.hostname))){

@@ -48,7 +48,7 @@ select:focus{outline:2px solid #c3b6ee}
 .weight-main strong{font-size:27px;font-weight:600}.weight-main strong small{font-size:12px;color:#baa8c8;margin-left:4px}
 .weight-main p,.weight-main>div>span{font-size:10px;color:#b3a1c0;line-height:1.9;margin-top:5px}.weight-main .bmi{display:flex;flex-direction:column;border-left:1px solid #eee8f4;padding-left:15px}
 .bmi strong{font-size:20px;color:#a08cc4}.weight-main svg{width:40%;flex:1;min-width:70px;overflow:visible}.daily-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.daily-metrics>button{border:1px solid #f0e9f6;padding:17px 11px;background:#fff;border-radius:20px;display:flex;flex-direction:column;align-items:flex-start;gap:9px;text-align:left;min-width:0}
+.daily-metrics>button,.daily-metrics>.step-metric{border:1px solid #f0e9f6;padding:17px 11px;background:#fff;border-radius:20px;display:flex;flex-direction:column;align-items:flex-start;gap:9px;text-align:left;min-width:0}
 .daily-metrics svg{color:#a5c4df}.daily-metrics>button:nth-child(2) svg{color:#dac490}.daily-metrics>button:nth-child(3) svg{color:#b09ccc}
 .daily-metrics span{font-size:12px;color:#9b86ac}.daily-metrics strong{font-size:21px;font-weight:550;overflow-wrap:anywhere;max-width:100%}.daily-metrics small{font-size:9px;color:#b6a6c2;margin-left:3px}.daily-metrics p{font-size:9px;color:#b8a8c4;line-height:1.7}
 .dimension-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin:19px 0 10px}

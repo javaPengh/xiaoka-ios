@@ -117,8 +117,8 @@
     },
     {
       "path": "ios/App/App/PedometerPlugin.swift",
-      "bytes": 2368,
-      "sha256": "efd8d0219fcbdf66326e7df677b7d15e85bad0e970089e6de540e32bb1eecdd3"
+      "bytes": 5842,
+      "sha256": "8a3cbb09b2c1d8c983eae456704ad536467e191e0b0eace7131d0c7ee0699256"
     },
     {
       "path": "ios/App/App/PrivacyInfo.xcprivacy",
@@ -227,8 +227,8 @@
     },
     {
       "path": "scripts/check-ios-project.mjs",
-      "bytes": 3103,
-      "sha256": "deaa8ce0c03266ac10620b5363286fec42aec20e2b1811b9cfd9825f27b17186"
+      "bytes": 3344,
+      "sha256": "e6745585f09177d8d2d5a75db177e63bceafc011e7bc9a17c4ec670698921970"
     },
     {
       "path": "scripts/package-ios.sh",
@@ -307,8 +307,8 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 48037,
-      "sha256": "8394e7f574eb0e588fdc456d6141958493efe0f3ea9ecf31775251ede7bfb668"
+      "bytes": 48125,
+      "sha256": "e20ec7d4e30117c6d93b8ef8c0e3d7b8a07b05170434056d6ff1a7a63a826ca0"
     },
     {
       "path": "src/Auth.tsx",
@@ -327,8 +327,13 @@
     },
     {
       "path": "src/Health.tsx",
-      "bytes": 10539,
-      "sha256": "5cc8f8c5471fb628facc133f4887391126a56f154b88f88231f8c6c1422263b1"
+      "bytes": 10511,
+      "sha256": "607e4880092361bddae70b9f56977930addbe584a85ee145bef370dba64c9fc0"
+    },
+    {
+      "path": "src/Motion.tsx",
+      "bytes": 5500,
+      "sha256": "da2f9043811fc75d746cfd8c5d251ee8232243d240b442c017d72539d2cd0b6c"
     },
     {
       "path": "src/NutritionQuestions.tsx",
@@ -347,8 +352,8 @@
     },
     {
       "path": "src/StepTracker.tsx",
-      "bytes": 3422,
-      "sha256": "8e8b2a12d2f936fb6453d510988bd0c3998e15c1adca6338ae00c9a510c7e95e"
+      "bytes": 612,
+      "sha256": "b65b778dcd82194cfb79cbb7e011c7de57ae45dedb1d822239b8bf2d7122fc66"
     },
     {
       "path": "src/api.ts",
@@ -357,13 +362,13 @@
     },
     {
       "path": "src/health.css",
-      "bytes": 11798,
-      "sha256": "80cc54cf8a986f425faf43d899ae6740a77a796d37e2d891b0a737f25381950f"
+      "bytes": 11826,
+      "sha256": "acce1f652e8c05f500c4f87e38615d6a528122cbca88fc396d50f1c764c2af5f"
     },
     {
       "path": "src/main.tsx",
-      "bytes": 1191,
-      "sha256": "7389ecb6a040f36d1031a3dd620725eb6d9d8521b64278ac4231cdfbb5dd4854"
+      "bytes": 1266,
+      "sha256": "b344b51283c1b64021bfbe87958ff6d54fdfcb43f13fd039323f1169b1dd14cd"
     },
     {
       "path": "src/nutrition-types.ts",
@@ -384,6 +389,11 @@
       "path": "src/offline/engine.mjs",
       "bytes": 15985,
       "sha256": "253b4f1edfac8a638e84d2e43bbac7476ba2475b9a4dde95dba1db099f6e74f1"
+    },
+    {
+      "path": "src/offline/motion-stream.mjs",
+      "bytes": 1555,
+      "sha256": "d878fe3e84b3ea477e3d60aaa0ebfc04fb004b5284b7d5d96dded5048488a740"
     },
     {
       "path": "src/offline/nutrition-backup.mjs",
@@ -412,8 +422,8 @@
     },
     {
       "path": "src/offline/steps.mjs",
-      "bytes": 1327,
-      "sha256": "b87103ca56e011e8ef7e1aba27f11bc461e3db5da4ae4be8a637e665b4860b1b"
+      "bytes": 1403,
+      "sha256": "c44fe0af57116b98e3a9eabb4e3fd4f63c92c5f29f07f1cd4e300a21031b7a2a"
     },
     {
       "path": "src/offline/storage.ts",
@@ -436,14 +446,19 @@
       "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
     },
     {
+      "path": "test/motion-stream.test.mjs",
+      "bytes": 2865,
+      "sha256": "35453c1361e8a14766d05ab884ed027a765cacd0ed390a74333a5e8d5075b634"
+    },
+    {
       "path": "test/photo-upload.test.mjs",
       "bytes": 3939,
       "sha256": "55861937bb75ad98f85781ec658a8639870445c876ecf1dc94e66ebab046afdc"
     },
     {
       "path": "test/steps.test.mjs",
-      "bytes": 3082,
-      "sha256": "b25e6ed1e945595e031b0dc0f69d0fb906ce957b61887135d2610c62980f97ad"
+      "bytes": 3463,
+      "sha256": "3e8674e9c802c5cdc5971941127fec79ca7079ae65a1d81fb4ffbfae0bafbf49"
     },
     {
       "path": "tsconfig.json",
@@ -456,6 +471,6 @@
       "sha256": "e565827713cc9438ee537810c495d6119e047ed1bd746c96702bc5c06dd67755"
     }
   ],
-  "updatedAt": "2026-11-15T03:19:53.066Z",
+  "updatedAt": "2026-11-15T03:44:37.628Z",
   "deviceTested": false
 }
